@@ -1,24 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Spaceship Battle</title>
+    <title>Trivia Time</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css">
     <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 </head>
+
 <body>
-    <div class="nes-container with-title is-dark">
+    <div id="gameStartBox" class="nes-container with-title is-dark">
         <p class="title">Trivia Game!!!</p>
         <div id="gameMenu">
-            <a id="startButton" class="nes-btn">Begin Trivia</a>
+            <button id="startButton" type="button" class="nes-btn">Begin Trivia</button>
+            <div id="countdown-clock"></div>
+        </div>
+    </div>
+
+    <div id="gameQuestionBox" class="nes-container with-title is-dark">
+        <p class="title"></p>
+        <div id="quiz"></div>
+        <button id="submit">Submit Quiz</button>
+        <div id="results"></div>
+        <!-- <div class="currentQuestionAnswers" style="background-color:#212529; padding: 1rem 0;">
+        </div> -->
+    </div>
+
+    <div id="gameLevelSelect" class="nes-container with-title is-dark">
+        <p class="title">Choose your difficulty...</p>
+        <div style="background-color:#212529; padding: 1rem 0;">
+            <label>
+                <input type="radio" class="nes-radio is-dark" name="answer-dark" value="easy" />
+                <span>Easy</span>
+            </label>
+            <label>
+                <input type="radio" class="nes-radio is-dark" name="answer-dark" checked value="normal" />
+                <span>Normal</span>
+            </label>
+            <label>
+                <input type="radio" class="nes-radio is-dark" name="answer-dark" value="hard" />
+                <span>Hard</span>
+            </label>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="assets/javascript/game.js"></script>
+    <script src="assets/javascript/app.js"></script>
 </body>
+
 </html>

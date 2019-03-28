@@ -1,0 +1,13 @@
+#gameQuestionBox {
+    height: 500px;
+}
+
+div#gameStartBox.nes-container.with-title.is-dark {
+    height: 150px;
+}
+
+/* THINKING ABOUT MAKING THE DIVS THE SAME SIZE, BUT WOULD HAVE TO CENTER */
+/* div#gameStartBox.nes-container.with-title.is-dark,
+div#gameLevelSelect.nes-container.with-title.is-dark {
+    height: 150px;
+} */
