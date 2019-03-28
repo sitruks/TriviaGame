@@ -64,7 +64,7 @@ $(document).ready(function () {
                                 <input type="radio" class="nes-radio is-dark"
                                 name="question${questionNumber}"
                                 value="${letter}">
-                                ${letter} :
+                                <span>${letter} :</span>
                                 ${currentQuestion.answers[letter]}
                                 </label>`
                             );
