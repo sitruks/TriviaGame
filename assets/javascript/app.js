@@ -1,6 +1,6 @@
 // //// 
-// // TODO: NEED TO FULLTY CHANGE OVER THE THEME, CURRENTLY STILL A FILLER ONE. POLARIZING TOPIC, BEST SERVED FOR TESTING DURING LATE NIGHT JAM SESSIONS OVER FINAL SUBMISSION.
-
+// // TODO: NEED TO FULLY CHANGE OVER THE THEME, CURRENTLY STILL A FILLER ONE. POLARIZING TOPIC, BEST SERVED FOR TESTING DURING LATE NIGHT JAM SESSIONS OVER FINAL SUBMISSION.
+// // TODO: NEED TO GIVE FUNCTIONALITY TO PROGRESS BAR, CURRENTLY A PLACEHOLDER. 
 // CREATE LEVELS IN WHICH THE USER CAN SET DIFFICULTY 
 function difficulty(easy, normal, hard, evil) {
     this.easy = easy;
@@ -203,6 +203,9 @@ $(document).ready(function () {
                 levelSelect = 0;
                 gameWelcome.hide();
                 gameResults.show();
+                // TODO: UPDATE SO THAT THE ANSWERS LIST IS SUMMARIZED IN THE FINAL PAGE 
+                // OR // 
+                // SHOW THE ANSWERS ON PAGE LIKE THE OLD VERSION OF THE APP BEFORE ADDING PAGINATION
                 resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
             };
 
