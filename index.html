@@ -13,39 +13,100 @@
 </head>
 
 <body>
-    <div id="gameStartBox" class="nes-container with-title is-dark">
-        <p class="title">Trivia Game!!!</p>
-        <div id="gameMenu">
-            <button id="startButton" type="button" class="nes-btn">Begin Trivia</button>
-            <div id="countdown-clock"></div>
+    <div id="gameContainer" class="row">
+        <div id="gameStartBox" class="nes-container with-title is-dark">
+            <p class="title">Trivia Game!!!</p>
+            <div class="row">
+                <div class="col-12">
+                    <button id="startButton" type="button" class="nes-btn">Begin Trivia</button>
+                </div>
+                <div class="col-12">
+                    <div id="countdown-clock"></div>
+                </div>
+            </div>
         </div>
-    </div>
-
-    <div id="gameQuestionBox" class="nes-container with-title is-dark">
-        <div class="currentQuestionAnswers" style="background-color:#212529; padding: 1rem 0;">
-        <p class="title"></p>
-        <div id="quiz"></div>
-        <button id="submit">Submit</button>
-        <div id="results"></div>
+        <div id="gameWelcome" class="nes-container with-title is-dark">
+            <div class="currentContainer">
+                <p class="title"></p>
+                <div class="row">
+                    <div class="nes-field">
+                        <form>
+                            <label for="name_field">Your name</label>
+                            <input type="text" id="name_field" class="nes-input" placeholder="John Snow" value="">
+                            <input type="button" class="nes-btn" value="submit" onclick="userName()" />
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-
-    <div id="gameLevelSelect" class="nes-container with-title is-dark">
-        <p class="title">Choose your difficulty...</p>
-        <div style="background-color:#212529; padding: 1rem 0;">
+        <div id="gameQuestionBox" class="nes-container with-title is-dark">
+            <div class="currentContainer">
+                <div class="row nes-container is-rounded is-dark">
+                    <div id="quiz" class="col-12"></div>
+                </div>
+                <br>
+                <div class="row-bottom">
+                    <div class="col-6-button">
+                        <button id="previous" type="button" class="menuToggle nes-btn is-error">Prev Question</button>
+                    </div>
+                    <div class="col-6-button">
+                        <button id="next" type="button" class="menuToggle nes-btn is-error">Next Question</button>
+                    </div>
+                </div>
+                <br>
+                <div class="row-bottom">
+                    <div class="col-12">
+                        <button id="submit" type="button" class="menuToggle nes-btn">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="gameProgress" class="nes-container with-title is-dark">
+            <div class="gameProgressContainer">
+                <div class="row">
+                    <progress class="nes-progress is-pattern" value="20" max="100"></progress>
+                </div>
+            </div>
+        </div>
+        <div id="gameResults" class="nes-container with-title is-dark">
+            <div class="currentContainer">
+                <p class="title"></p>
+                <div class="row">
+                    <div class="col-12">
+                        <div id="resultsImage"></div>
+                    </div>
+                </div>
+                <br><br><br><br><br>
+                <div class="row">
+                    <div id="results" class="col-12"></div>
+                </div>
+                <br><br><br><br><br>
+                <div class="row">
+                    <button id="returnButton" type="button" class="menuToggle nes-btn">Return to Start</button>
+                </div>
+            </div>
+        </div>
+        <div id="gameLevelSelect" class="nes-container with-title is-dark">
+            <p class="title">Choose your difficulty...</p>
             <label>
                 <input type="radio" class="nes-radio is-dark" name="answer-dark" value="easy" />
                 <span>Easy</span>
             </label>
             <label>
-                <input type="radio" class="nes-radio is-dark" name="answer-dark" checked value="normal" />
-                <span>Normal</span>
-            </label>
-            <label>
-                <input type="radio" class="nes-radio is-dark" name="answer-dark" value="hard" />
-                <span>Hard</span>
-            </label>
+                <label>
+                    <input type="radio" class="nes-radio is-dark" name="answer-dark" checked value="normal" />
+                    <span>Normal</span>
+                </label>
+                <label>
+                    <input type="radio" class="nes-radio is-dark" name="answer-dark" value="hard" />
+                    <span>Hard</span>
+                </label>
+                <label>
+                    <input type="radio" class="nes-radio is-dark" name="answer-dark" value="evil" />
+                    <span>Evil</span>
+                </label>
         </div>
+    </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

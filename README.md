@@ -21,3 +21,10 @@ If time permits, fiddle with the timer to be specific to each page/question. Thi
 
 
 
+
+
+IMAGE SOURCES
+
+GIPHY
+https://giphy.com/gifs/celebrity-ben-trump-ZGRIt8l3Zymcw
+
