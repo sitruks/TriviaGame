@@ -55,12 +55,16 @@ function countdownTimer() {
 
 // // TODO: RETURN BUTTON
 //     returnButton = $("returnButton").on("click", return) {
-    
-    //     }
-    
+
+//     }
+
 // // TODO: FIX BUG THAT POPULATES MULTIPLE IMAGES PER BUTTON CLICK
 // // TODO: SET DEFAULT NAME FIELD IF THE SUBMIT BUTTON IS NOT CLICKED
+//// add a lone to grab the id using jquery .attr (disable button) and renable it on restart button
+// change the disabled attribute back to false
+
 // RANDOM IMAGE WITH USER INPUT FOR END OF GAME
+
 function userName() {
     $("#name_field").empty();
     //GET
@@ -69,30 +73,33 @@ function userName() {
     console.log(magic);
     if (magic === null) {
         magic = "Bats"
-    } else 
+    } else
     $('#name_field').val(magic);
     console.log(magic);
-    
-    var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag="+ magic +"";
+    $("#buttonSubmit").attr("disabled", true);
+    // .css if it exists already
+    // display none with css
+    // add alert saying "welcome +name"
+    var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=" + magic + "";
 
-  $.ajax({
-    url: queryURL,
-    method: "GET"
-  })
-    .then(function(response) {
-      var imageUrl = response.data.image_original_url;
-      var magicImage = $("<img>");
-      magicImage.attr("src", imageUrl);
-      magicImage.attr("alt", "magic image");
-      $("#resultsImage").prepend(magicImage);
-    });
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    })
+        .then(function (response) {
+            var imageUrl = response.data.image_original_url;
+            var magicImage = $("<img>");
+            magicImage.attr("src", imageUrl);
+            magicImage.attr("alt", "magic image");
+            $("#resultsImage").prepend(magicImage);
+        });
 };
 
 // CALL AND POPULATE QUIZ
 $(document).ready(function () {
-    
+
     $("#startButton").on("click", start);
-    
+
     function start() {
         $("#startButton").addClass("is-error is-disabled");
         $("#startButton").html("Good Luck!");
@@ -106,12 +113,12 @@ $(document).ready(function () {
         (function () {
             const myQuestions = [
                 {
-                    question: "How do you spell the First Lady's first name?",
+                    question: "How much wood could a woodchuck chuck if a woodchuck could chuck wood?",
                     answers: {
-                        A: "Melanie",
-                        B: "Melvinia",
-                        C: "Melania",
-                        D: "Merlin"
+                        A: "1 whole tree",
+                        B: "A Dunn Lumber",
+                        C: "It's fill",
+                        D: "Eleven"
                     },
                     correctAnswer: "C"
                 },
@@ -136,14 +143,14 @@ $(document).ready(function () {
                     correctAnswer: "D"
                 },
                 {
-                    question: "How do you spell the First Lady's first name, again?",
+                    question: "What is the air speed velocity of an unladen swallow?",
                     answers: {
-                        A: "Melania",
-                        B: "Melvinia",
-                        C: "Melanie",
-                        D: "Merlin"
+                        A: "Light speed",
+                        B: "Bird speed",
+                        C: "24 MPH (11 MPS)",
+                        D: "... African or European?"
                     },
-                    correctAnswer: "A"
+                    correctAnswer: "C"
                 },
                 {
                     question: "How do you?",
